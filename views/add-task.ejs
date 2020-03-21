@@ -1,0 +1,15 @@
+<%- include('./partials/header.ejs')%>
+<title>Add Book</title>
+
+<body>
+  <h1 class='add-title'>Add Book</h1>
+  <form action="/add" method="post">
+    <label for="taskName" >Task Name:</label>
+    <input type="text" name="taskName" id="taskName">
+    <label for="completeBy">Complete By:</label>
+    <input type="text" name="completeBy" id="completeBy">
+    <input type="submit" value="+Add Task+">
+  </form>
+</body>
+
+</html>

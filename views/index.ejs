@@ -1,0 +1,38 @@
+<%- include('./partials/header.ejs')%>
+<body>
+    <div class='container'>
+        <div class="row">
+            <header>
+                <div class='six columns'><h1 class='title'>Task List</h1></div>
+                <div class='six columns'><a href='/add' id='addButton'class='button'>+Add Task+</a></div>
+            </header>
+        </div>
+        <!--Start of the task item-->
+        <% for (let id in tasks) { %>
+            <div class='row'>
+                <div class='eight columns'>
+                    <h4><%=tasks[id].taskName%></h4>
+                    <div class='row'>
+                        <div class='four columns'>
+                            <form action='/<%=id%>' method='get'>
+                                <input type='submit' value='View Task Info'>
+                            </form>
+                        </div>
+                        <div class='four columns'>
+                            <form action='/completed/<%=id%>' method='get'>
+                                <input type='submit' value='Task Complete'>
+                            </form>
+                        </div>
+                        <div class='four columns'>
+                            <form action='/delete/<%=id%>' method='post'>
+                                <input type='submit' value='Delete Task'>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <% }%>
+        <!--End of the task item-->
+    </div>
+</body>
+</html>
